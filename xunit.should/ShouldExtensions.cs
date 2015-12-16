@@ -190,8 +190,9 @@ namespace Xunit.Should
 			Assert.IsNotType(type, self);
 		}
 
-		public static void ShouldBeThrownBy<T>(this T self, Assert.ThrowsDelegate method)
-			where T : Exception
+		//public static void ShouldBeThrownBy<T>(this T self, Assert.ThrowsDelegate method)
+        public static void ShouldBeThrownBy<T>(this T self, Action method)
+            where T : Exception
 		{
 			Assert.Throws<T>(method);
 		}
